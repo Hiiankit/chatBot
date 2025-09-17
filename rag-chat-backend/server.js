@@ -182,7 +182,7 @@ app.post("/chat", async (req, res) => {
 
     const prompt = context
       ? `Use the following context to answer the question:\n\n${context}\n\nQuestion: ${query}`
-      : `Answer the question directly:\n\n${query}. If the ${query} is not related to the ${context}, say "I don't know" or "I don't have information about that" or "I don't have information about that".`;
+      : `Answer the question directly:\n\n${query}. If the ${query} is not related to the ${context}, then strictly return response as N/A.`;
 
     const geminiRes = await model.generateContent(prompt);
     const botResponse = geminiRes.response.text();
