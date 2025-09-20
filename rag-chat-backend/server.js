@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const JINA_API_KEY = process.env.JINA_API_KEY;
 
-const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
+const REDIS_URL = "rediss://default:ARlnAAImcDJhZjM1NWI3YmE4ZWM0ZTZkOThkN2UwZjhjOTg3ZWM4OXAyNjUwMw@tender-grouse-6503.upstash.io:6379";
 const redisClient = createClient({ url: REDIS_URL });
 redisClient.on("error", (err) => console.error("Redis Client Error", err));
 
